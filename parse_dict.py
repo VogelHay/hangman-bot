@@ -6,6 +6,7 @@ import time
 import os
 
 start = time.perf_counter()
+alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
 
 def check_os():
     global operating_system
@@ -71,7 +72,8 @@ def subdict_init():
 def num_dict(length, word):
     file = f"subdicts/{length}.txt"
     with open(file, 'r') as f:
-        if word in file:
+        content = f.read()
+        if word in content:
             print(f"{word} found!")
             return
     with open(file, "a") as f:
