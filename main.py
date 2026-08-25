@@ -14,7 +14,10 @@ def check_dict(path):
         time.sleep(1)
         result = subprocess.run(["python3", "parse_dict.py"], check=True)
 
+
+
 def main():
     check_dict('trimmed-dict.txt')
+
 
 main()
