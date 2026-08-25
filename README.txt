@@ -6,6 +6,8 @@ Goals:
 	a. Frequency of letter in any position
 	b. Frequency of letter in certain positions
 3. Using the weights from #2, construct a binary search tree for each word length (2, 3, 4...)
+	a. Not a binary search tree, need to research what data structure would be best
+	b. Once determined, start w/ three character words to solve and go from there
 4. Reverse engineer this to find the most difficult word to solve based on its logic
    (to be used when bot is playing as the hangman) 
 5. Make pretty U.I.
@@ -17,3 +19,5 @@ Sort trimmed-dict into length-based subdicts
 Options:
 1. For each word, store length of word and append word to subdict
 	a. Windows: use "for line in f:"
+
+
