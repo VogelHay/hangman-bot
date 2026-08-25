@@ -11,3 +11,9 @@ Goals:
 5. Make pretty U.I.
 6. Create user input to allow the user to play either side of the game
 7. Profit???
+
+
+Sort trimmed-dict into length-based subdicts
+Options:
+1. For each word, store length of word and append word to subdict
+	a. Windows: use "for line in f:"
