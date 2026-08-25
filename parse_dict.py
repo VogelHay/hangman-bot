@@ -54,7 +54,7 @@ def dict_init(trim):
 def subdict_init():
     print('Starting subdictionary config!')
     os.makedirs('subdicts', exist_ok=True)
-    subdicts = ('one.txt', 'two.txt', 'three.txt', 'four.txt', 'five.txt', 'six.txt', 'seven.txt', 'eight.txt', 'nine.txt', 'ten.txt', 'eleven.txt', 'twelve.txt', 'thirteen.txt', 'fourteen.txt', 'fifteen.txt', 'sixteen.txt')
+    subdicts = ('three.txt', 'four.txt', 'five.txt', 'six.txt', 'seven.txt', 'eight.txt', 'nine.txt', 'ten.txt', 'eleven.txt', 'twelve.txt', 'thirteen.txt', 'fourteen.txt', 'fifteen.txt', 'sixteen.txt')
     for x in subdicts:
         path = f"subdicts/{x}"
         if os.path.exists(path):
@@ -69,25 +69,40 @@ def subdict_init():
 
 # Function that takes the selected word and its length and appends it to the appropriately lettered dict
 def num_dict(length, word):
-    with open(f"{length}.txt", "a") as f:
+    file = f"subdicts/{length}.txt"
+    with open(file, 'r') as f:
+        if word in file:
+            print(f"{word} found!")
+            return
+    with open(file, "a") as f:
         f.write(word)
+        print(f"{word} added!")
     pass
 
 
 # Determines length of str and directs towards specific dict
 def divy_dict(trim):
-    word_length = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen']
-    word_int = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    print("Sorting library...")
+    word_length = ['three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen']
+    word_int = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     len_dict = dict(zip(word_int, word_length))   
 
     with open(trim) as f:
         for line in f:
+            length = len(line) - 1
+            #print(length)
             for x in len_dict:
-                print(line)
-                if len_dict.get(x) == len(line):
-                    num_dict(len_dict.get(x), line)
+                if length == x:
+                    num_dict(len_dict[x], line)
+                pass
+            '''word = line
+            for x in len_dict:
+                #print(line)
+                if len(word) == len_dict.get(x):
+                    num_dict(len_dict.get(x), word)
+                    print("written to file")
                 else:
-                    pass
+                    pass'''
 
 
             
