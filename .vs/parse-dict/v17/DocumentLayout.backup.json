@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vogel\\source\\repos\\hangman-bot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{199EF225-33D2-478C-8F07-00DCF72E79DA}|parse-dict.pyproj|C:\\Users\\vogel\\Source\\Repos\\hangman-bot\\parse_dict.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{199EF225-33D2-478C-8F07-00DCF72E79DA}|parse-dict.pyproj|solutionrelative:parse_dict.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "parse_dict.py",
+              "DocumentMoniker": "C:\\Users\\vogel\\source\\repos\\hangman-bot\\parse_dict.py",
+              "RelativeDocumentMoniker": "parse_dict.py",
+              "ToolTip": "C:\\Users\\vogel\\source\\repos\\hangman-bot\\parse_dict.py",
+              "RelativeToolTip": "parse_dict.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-08-25T16:32:51.643Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
