@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-from ast import Global
 import platform
 import time
 import os
@@ -11,7 +10,7 @@ start = time.perf_counter()
 def check_os():
     global operating_system
     operating_system = platform.system()
-    print(operating_system)
+    #print(operating_system)
 
 
 def trim_dict(file_in, file_out):
@@ -40,17 +39,6 @@ def trim_dict(file_in, file_out):
     end = time.perf_counter()
     print(f"Complete in {round(end - start, 4)} seconds.\nLongest string ({max_int}): {max_str}Shortest string ({min_int}): {min_str} ")
 
-def divy_dict(dict):
-    word_length = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen']
-    word_int = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    len_dict = dict(zip(word_int, word_length))   
-
-    with open(dict) as f:
-        for w in len_dict:
-            word_len = len(w) - 1
-            if word_len == w:
-                pass
-
 def dict_init(trim):
     if os.path.exists(trim):
         if os.path.getsize(trim) == 0:
@@ -58,14 +46,55 @@ def dict_init(trim):
             trim_dict("dict.txt", "trimmed-dict.txt")
         else:
             print("Dictionary previously formatted. Continuing...")
-            time.sleep(2)
+            time.sleep(1)
     else:
         print("File not found. Creating now...")
         f = open("trimmed-dict.txt", 'x')
 
+def subdict_init():
+    print('Starting subdictionary config!')
+    os.makedirs('subdicts', exist_ok=True)
+    subdicts = ('one.txt', 'two.txt', 'three.txt', 'four.txt', 'five.txt', 'six.txt', 'seven.txt', 'eight.txt', 'nine.txt', 'ten.txt', 'eleven.txt', 'twelve.txt', 'thirteen.txt', 'fourteen.txt', 'fifteen.txt', 'sixteen.txt')
+    for x in subdicts:
+        path = f"subdicts/{x}"
+        if os.path.exists(path):
+            pass
+        else:
+            print("File not found. Creating now...")
+            #f = open(x, "x")
+            with open(path, "w", encoding="utf-8"):
+                pass
+            print(f"The following file has been created: {x}")
+            time.sleep(1)
+
+# Function that takes the selected word and its length and appends it to the appropriately lettered dict
+def num_dict(length, word):
+    with open(f"{length}.txt", "a") as f:
+        f.write(word)
+    pass
+
+
+# Determines length of str and directs towards specific dict
+def divy_dict(trim):
+    word_length = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen']
+    word_int = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    len_dict = dict(zip(word_int, word_length))   
+
+    with open(trim) as f:
+        for line in f:
+            for x in len_dict:
+                print(line)
+                if len_dict.get(x) == len(line):
+                    num_dict(len_dict.get(x), line)
+                else:
+                    pass
+
+
+            
 def main():
     check_os()
     dict_init("trimmed-dict.txt")
+    subdict_init()
     divy_dict("trimmed-dict.txt")
 
 main()
